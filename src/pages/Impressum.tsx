@@ -1,7 +1,7 @@
 import React from "react";
 
 const Impressum = () => {
-  return <div>Impressum</div>;
+  return <main className="m-auto w-[900px]">Impressum</main>;
 };
 
 export default Impressum;

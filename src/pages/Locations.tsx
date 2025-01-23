@@ -1,7 +1,7 @@
 import React from "react";
 
 const Locations = () => {
-  return <div>Locations</div>;
+  return <main className="m-auto w-[900px]">Locations</main>;
 };
 
 export default Locations;
