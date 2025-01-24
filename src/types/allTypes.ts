@@ -20,3 +20,7 @@ export type DataContextType = {
 export type DataContextPropsType = {
   children: React.ReactNode;
 };
+
+export type ShopPropsType = {
+  data: Restaurant;
+};

@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import {
   DataContextPropsType,
   DataContextType,
@@ -9,6 +9,18 @@ const DataContext = createContext<DataContextType | undefined>(undefined);
 
 const DataContextProvider = ({ children }: DataContextPropsType) => {
   const [allRestaurants, setAllRestaurants] = useState<Restaurant[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await fetch("./restaurantData.json");
+      const data = await res.json();
+
+      setAllRestaurants(data);
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <DataContext.Provider value={{ setAllRestaurants, allRestaurants }}>
       {children}
